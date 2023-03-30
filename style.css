@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-highlight: 'Staatliches', cursive;
+    --ff-text: 'Palanquin', sans-serif;
+
+    --hue: 230;
+    --fc-stripe: hsl(var(--hue), 0%, 100%);
+    --fc-text: hsl(var(--hue), 84%, 12%);
+    --fc-bar: hsl(var(--hue), 17%, 35%);
+
+    --bc-upper: hsl(var(--hue), 17%, 62%);
+    --bc-stripe: hsl(var(--hue), 18%, 79%);
+    --bc-large: hsl(var(--hue), 100%, 97%);
+    --bc-bar: hsl(var(--hue), 69%, 95%);
+
+    font-size: 62.5%;
+    --fs-stripe: 4rem;
+    --fs-text: 1.3rem;
+    --fs-bar: 2rem;
+}
+
+body {
+    font-family: var(--ff-text);
+    background-color: var(--bc-large);
+}
+
+header {
+    font-size: var(--fs-stripe);
+    line-height: 3.4rem;
+    text-align: center;
+    color: var(--fc-stripe);
+
+    background-color: var(--bc-upper);
+
+    height: 28rem;
+
+    display: grid;
+    justify-items: stretch;
+    align-content: space-evenly;
+    
+    margin-bottom: 2rem;
+}
+
+header img {
+    height: 14rem;
+}
+
+header p {
+    background-color: var(--bc-stripe);
+    text-align: center;
+
+    text-shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.25);
+
+    padding: 8px 8.6rem;
+
+    height: 5rem;
+}
+
+header, .card {
+    font-family: var(--ff-highlight);
+    text-transform: uppercase;
+}
+
+
+.case {
+    max-width: 32rem;
+    margin: 0 auto;
+    padding: 0 1rem 1rem;
+    
+    display: grid;
+    gap: 3.2rem;
+
+}
+
+.case > p {
+    font-size: var(--fs-text);
+    text-align: center;
+    line-height: 2rem;
+    color: var(--fc-text);
+
+    height: 8rem;
+    
+    margin-bottom: 3rem;
+}
+
+.card {
+    position: relative;
+    height: fit-content;
+
+    display: grid;
+}
+
+.card img {
+    width: 100%;
+    height: fit-content;
+
+    object-fit: cover;
+    
+    border-radius: 2rem;
+
+    transition: transform 200ms;
+    animation: up 700ms ease-in-out 200ms;
+
+    filter: brightness(0.9) saturate(1.2);
+}
+
+/* .card img:hover {
+    transform: scale(1.2);
+    filter: brightness(1) saturate(1.3);
+} */
+
+.card p {
+    font-size: var(--fs-bar);
+    line-height: 3.4rem;
+    color: var(--fc-bar);
+    
+    border-radius: 2rem;
+    background-color: var(--bc-bar);
+    padding: 0 2.4rem;
+    height: 3.4rem;
+    display: inline-flex;
+    align-items: center;
+    
+    position: absolute;
+    top: 1.7rem;
+    right: 4rem;
+    
+    animation: down 700ms ease-out 200ms;
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(-6rem);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(12rem);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
